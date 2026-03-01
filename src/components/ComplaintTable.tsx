@@ -94,7 +94,7 @@ export default function ComplaintTable() {
   };
 
   const applyFilters = useCallback(() => {
-    let filtered = complaints;
+    let filtered = complaints.filter(complaint => complaint.status === "In-Progress");
 
     if (filters.user_id) {
       filtered = filtered.filter(report => report.user_id === parseInt(filters.user_id));
@@ -176,7 +176,7 @@ export default function ComplaintTable() {
                   <td className="border text-black p-2">{complaint.area_name}</td>
                   <td className="border text-black p-2">{complaint.complaint_type_name}</td>
                   <td className="border text-black p-2">{complaint.details}</td>
-                  <td className={`border text-black p-2 ${complaint.status === "Resolved" ? "bg-green-200" : complaint.status === "In-Progress" ? "bg-red-200" : complaint.status === "No Complaint" ? "bg-blue-200" : ""}`}>{complaint.status}</td>
+                  <td className={`border text-black p-2 ${complaint.status === "In-Progress" ? "bg-red-200" : ""}`}>{complaint.status}</td>
                   <td className="border text-black p-2">
                     <div className="flex gap-2">
                       <button
