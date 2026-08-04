@@ -295,6 +295,7 @@ export default function ComplaintActionTable() {
               className={fieldClass}
               placeholderText="Select date"
               wrapperClassName="w-full"
+              portalId="datepicker-portal"
             />
           </Field>
           <Field label="Action taken" htmlFor="action">

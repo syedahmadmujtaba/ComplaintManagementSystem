@@ -116,6 +116,11 @@ body {
   animation: modal-in 0.3s var(--ease) forwards;
 }
 
+/* datepicker is portaled out of modals, so it must layer above the modal (z-50) */
+#datepicker-portal .react-datepicker-popper {
+  z-index: 60;
+}
+
 /* ───────────────────────────────────────────────
    Accessibility — honour reduced motion
    ─────────────────────────────────────────────── */
