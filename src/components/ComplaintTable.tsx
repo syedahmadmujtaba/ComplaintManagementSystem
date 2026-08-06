@@ -41,6 +41,7 @@ export default function ComplaintTable() {
   };
 
   const fetchUsers = async () => {
+    if (!isAdmin) return;
     setLoading(true);
     try {
       const response = await fetch(`/api/users`);

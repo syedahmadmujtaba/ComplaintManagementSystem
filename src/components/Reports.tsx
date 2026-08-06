@@ -95,7 +95,7 @@ const Reports = () => {
         to_date: sp.get('to_date') ?? d.to_date,
       });
     }
-    Promise.all([fetch('/api/areas'), fetch('/api/complaint-types'), fetch('/api/users')])
+    Promise.all([fetch('/api/areas'), fetch('/api/complaint-types'), fetch('/api/reports/users')])
       .then(async ([a, t, u]) => {
         setAreas(await a.json());
         setTypes(await t.json());

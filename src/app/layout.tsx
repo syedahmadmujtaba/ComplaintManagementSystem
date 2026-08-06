@@ -35,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning
         className={`${inter.variable} ${grotesk.variable} ${jetbrains.variable} ${inter.className}`}
       >
         <AppShell>{children}</AppShell>
